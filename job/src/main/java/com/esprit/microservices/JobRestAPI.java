@@ -17,7 +17,7 @@ import org.springframework.http.ResponseEntity;
 
 @RestController
 @RequestMapping("/jobs")
-public class JobRestAPI implements Serializable {
+public class JobRestAPI {
     @Autowired
     private JobRepository jobRepository;
 
@@ -26,7 +26,7 @@ public class JobRestAPI implements Serializable {
         return jobRepository.findAll();
     }
 
-    @GetMapping("/{id]")
+    @GetMapping("/{id}")
     public Job getJobById(@PathVariable("id") int id) {
         return jobRepository.findById(id).get();
     }

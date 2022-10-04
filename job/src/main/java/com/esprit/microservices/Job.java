@@ -1,11 +1,16 @@
 package com.esprit.microservices;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Job {
+public class Job implements Serializable{
+
+	private static final long serialVersionUID = 6;
+
     @Id
     @GeneratedValue
     private int id;
